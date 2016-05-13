@@ -1,0 +1,49 @@
+﻿<UserControl x:Class="PlayerData.Views.PlayerInfoView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PlayerData.Views"
+             xmlns:l="clr-namespace:PlayerData.Converters"
+             xmlns:vmi="clr-namespace:PlayerData.Unity"             
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="248" FontFamily="DejaVu Sans Mono" FontSize="10">
+    <UserControl.Resources>
+        <l:AlignConverter        x:Key="aConverter1" />
+        <l:StringValueConverter  x:Key="fConverter"  />
+    </UserControl.Resources>
+    <Grid Background="Black">
+        <Grid.Resources>
+            <Style TargetType="TextBlock">
+                <Setter Property="Padding" Value="5,0,0,0" />
+                <Setter Property="VerticalAlignment" Value="Center" />
+            </Style>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"   />
+            <RowDefinition Height="6"    />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="6"    />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="6"    />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Row="0" Grid.ColumnSpan="5" Orientation="Horizontal" HorizontalAlignment="Center">
+            <TextBlock Text="{Binding Path=Name}" HorizontalAlignment="Center" FontFamily="Palatino Linotype" FontSize="14" TextDecorations="Underline"/>
+        </StackPanel>
+        <TextBlock Grid.Row="2" Grid.Column="1" Text="LEVEL:" />
+        <TextBlock Grid.Row="2" Grid.Column="2" Foreground="Yellow" Text="{Binding Path=Level}" />
+        <TextBlock Grid.Row="2" Grid.Column="3" Text="TNL:" />
+        <TextBlock Grid.Row="2" Grid.Column="4" Foreground="Yellow" Text="{Binding Path=TNL}" />
+        <TextBlock Grid.Row="4" Grid.Column="1" Text="ALIGN:" />
+        <TextBlock Grid.Row="4" Grid.Column="2" Foreground="{Binding Path=AlignColor}" Text="{Binding Path=Align}" />
+        <TextBlock Grid.Row="4" Grid.Column="3" HorizontalAlignment="Left" Text="STATE:" />
+        <TextBlock Grid.Row="4" Grid.Column="4" Foreground="{Binding Path=StateColor}" Text="{Binding Path=State}" />
+    </Grid>
+</UserControl>

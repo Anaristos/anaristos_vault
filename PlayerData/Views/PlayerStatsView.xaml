@@ -1,0 +1,53 @@
+﻿<UserControl x:Class="PlayerData.Views.PlayerStatsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PlayerData.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="100" d:DesignWidth="248" FontFamily="DejaVu Sans Mono" FontSize="10">
+    <Grid Background="Black">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="12" />
+            <RowDefinition Height="12" />
+            <RowDefinition Height="12" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="1" Padding="5,0,5,0" Text="INT:" />
+        <TextBlock Grid.Row="0" Grid.Column="2">
+                    <Run Text="{Binding Path=Int, Mode=OneWay}" Foreground="Yellow" />
+					<Run Text="{Binding Path=MaxInt, Mode=OneWay}" Foreground="GoldenRod" />
+        </TextBlock>
+        <TextBlock Grid.Row="0" Grid.Column="3" Text="CON :" Padding="5,0,5,0" />
+        <TextBlock Grid.Row="0" Grid.Column="4">
+					<Run Text="{Binding Path=Con, Mode=OneWay}" Foreground="Yellow" />
+					<Run Text="{Binding Path=MaxCon, Mode=OneWay}" Foreground="GoldenRod" />
+        </TextBlock>
+        <TextBlock Grid.Row="1" Grid.Column="1" Padding="5,0,5,0" Text="STR:" />
+        <TextBlock Grid.Row="1" Grid.Column="2">
+					<Run Text="{Binding Path=Str, Mode=OneWay}" Foreground="Yellow" />
+					<Run Text="{Binding Path=MaxStr, Mode=OneWay}" Foreground="GoldenRod" />
+        </TextBlock>
+        <TextBlock Grid.Row="1" Grid.Column="3" Padding="5,0,5,0" Text="WIS :" />
+        <TextBlock Grid.Row="1" Grid.Column="4">
+					<Run Text="{Binding Path=Wis, Mode=OneWay}" Foreground="Yellow" />
+					<Run Text="{Binding Path=MaxWis, Mode=OneWay}" Foreground="GoldenRod" />
+        </TextBlock>
+        <TextBlock Grid.Row="2" Grid.Column="1" Padding="5,0,5,0" Text="DEX:" />
+        <TextBlock Grid.Row="2" Grid.Column="2">
+					<Run Text="{Binding Path=Dex, Mode=OneWay}" Foreground="Yellow" />
+					<Run Text="{Binding Path=MaxDex, Mode=OneWay}" Foreground="GoldenRod" />
+        </TextBlock>
+        <TextBlock Grid.Row="2" Grid.Column="3" Padding="5,0,5,0" Text="LUCK:" />
+        <TextBlock Grid.Row="2" Grid.Column="4">
+					<Run Text="{Binding Path=Luck, Mode=OneWay}" Foreground="Yellow" />
+					<Run Text="{Binding Path=MaxLuck, Mode=OneWay}" Foreground="GoldenRod" />
+        </TextBlock>
+    </Grid>
+</UserControl>
